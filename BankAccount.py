@@ -9,8 +9,10 @@ class BankAccount:
         print(f'{self.full_name} deposited: ${amount} new balance: ${self.balance}')
     
     def withdraw (self, amount):
-        if amount > self.balance :
+        if amount >= self.balance :
             print('Insufficient funds.')
+            self.balance -= 10
+            print(f'{self.full_name} charged overdraft fee of $10 new balance: ${self.balance}')
         else :
             self.balance -= amount
             print(f'{self.full_name} withdrew: ${amount} new balance: ${self.balance}')
